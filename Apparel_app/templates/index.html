@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>which size?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      color: #4CAF50;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 0.3cm;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    select, input[type="text"] {
+      padding: 5px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    ::placeholder {
+        color: gray;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>어떤 핏을 원해요?</h1>
+    
+    <!--<label for="dropdown">카테고리</label>
+    <select id="dropdown" name="category">
+            <option value="option0">선택</option>
+            <option value="option1">신상품</option>
+            <option value="option2">상의</option>
+            <option value="option3">바지</option>
+            <option value="option4">치마</option>
+            <option value="option5">원피스</option>
+            <option value="option6">아우터</option>
+            <option value="option7">세일</option>
+    </select>-->
+      <form method="POST", action='/recommend'>
+        <div class="container">        
+        <label for="dropdown">핏</label>
+        <select id="dropdown" name="fit">
+            <option value="선택">선택</option>
+            <option value="타이트">타이트</option>
+            <option value="적당">적당</option>
+            <option value="루즈">루즈</option>
+        </select> 
+
+        <label for="input1">키:</label>
+        <input type="text" id="input_id" name="height", placeholder="키(cm)">
+            
+        <label for="input2">엉덩이 둘레:</label>
+        <input type="text" id="input2", name="hips", placeholder="엉덩이 둘레(inch)">
+
+        <label for="input3">컵 사이즈:</label>
+        <input type="text" id="input3", name="cup_size", placeholder="컵 사이즈(a,b,...)">
+        </div>
+        <button type="submit">사이즈 찾기</button>
+      </form>  
+  </main>
+</body>
+</html>
